@@ -4,32 +4,50 @@
 // va applicato uno sconto del 20% per i minorenni;
 // va applicato uno sconto del 40% per gli over 65.
 
-// chiedere all'utente il numero di chilometri
-var numeroKM = prompt("Quanti kilometri vuoi percorrere?");
-console.log(numeroKM);
+var buttonGenera = document.getElementById('genera');
+buttonGenera.addEventListener("click",
 
+function() {
 
-// chiedere all'utente età
-var etaPasseggero = prompt("Quanti anni hai?")
-console.log(etaPasseggero);
+  // // form utente nome
+  var nomeUtente = document.getElementById("nome").value;
+  // form utente il numero di chilometri
+  var numeroKM = parseInt(document.getElementById("km").value);
+  // form utente eta
+  var etaPasseggero = document.getElementById("eta").value;
 
-// sconto 40%
-var over65 = etaPasseggero >= 65;
-console.log(over65);
+  // calcolare prezzo totale del viaggio
+  var prezzoBiglietto = numeroKM * 0.21;
+  // calcolare prezzo minorenni
+  var under18 = prezzoBiglietto - (prezzoBiglietto * 0.2);
+  // calcolare prezzo over65
+  var over65 = prezzoBiglietto - (prezzoBiglietto * 0.4);
+  var totale = "";
 
-// sconto 20%
-var under18 = etaPasseggero <= 17;
-console.log(under18)
+  if (eta == "Minorenne") {
+  totale = under18.toFixed(2);
+  document.getElementById("sconto").innerHTML = "Sconto under18 -20%";
+  } else if (eta == "Over 65") {
+  totale = over65.toFixed(2);
+  document.getElementById("sconto").innerHTML = "Sconto over65 -40%";
+} if (eta == "Maggiorenne"){
+    totale = prezzoBiglietto.toFixed(2);
+    document.getElementById("sconto").innerHTML = "Biglietto regular";
+  }
 
-// calcolare il prezzo totale del viaggio
-var prezzoBiglietto = (numeroKM * 0.21);
-if (over65) {
-  prezzoBiglietto = (numeroKM * 0.126);
+  document.getElementById("totale-value").innerHTML = prezzoBiglietto + " €";
 
-} else if  (under18) {
-  prezzoBiglietto = (numeroKM * 0.168);
+  // stampiamo biglietto
+  var nomeUtenteValue = document.getElementById("nome-value").innerHTML = nomeUtente;
+
+  var scontoValue = document.getElementById("sconto-value").innerHTML = totale;
+
+  var nomeUtenteValore = document.getElementById("nome-value").innerHTML = nomeUtente;
+  var carrozzaValue = Math.floor((Math.random() * 9 ) + 1);
+  document.getElementById("carrozza-value").innerHTML = carrozzaValue;
+  var codiceCp = Math.floor((Math.random() * 10000 ) + 90000);
+  document.getElementById("codice-cp-value").innerHTML = codiceCp;
+
 }
-console.log(prezzoBiglietto);
 
-// stringa risultato
-document.getElementById("prezzo-treno").innerHTML= "Ecco il prezzo su misura per te " + prezzoBiglietto + "€";
+);

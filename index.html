@@ -42,11 +42,52 @@
       <img src="img/logo-trenitalia.svg" alt="logo trenitalia">
     </div>
 
-    <div class="biglietto">
-      <div class="train-calculator">
-        <p id="prezzo-treno"></p>
+    <div class="container">
+      <h2>calcola prezzo biglietto</h2>
+      <div class="form-biglietto">
+        <form class="form-item" action="index.html" method="post">
+
+          <input id="nome" type="text" name="nome" placeholder="Nome Passegero">
+          <input id="km" type="number" name="" value="" placeholder="Km da percorrere">
+          <select id="eta"  name="eta">
+            <option value="Minorenne">Minorenne</option>
+            <option value="Maggiorenne">Maggiorenne</option>
+            <option value="Over65">Over65</option>
+          </select>
+          <br>
+          <button id="genera" type="button" name="button">Genera</button>
+          <button type="button" name="button">Annulla</button>
+        </form>
       </div>
+      <h2>il tuo biglietto</h2>
+      <div class="genera-biglietto">
+        <h3>dettaglio passeggeri</h3>
+        <br>
+        <table>
+          <tr>
+            <th>Nome Passeggero</th>
+            <th>Offerta</th>
+            <th>Carrozza</th>
+            <th>Codice CP</th>
+            <th>Costo biglietto</th>
+          </tr>
+          <tr>
+            <td id="nome-value">prova</td>
+            <td id="sconto-value">prova</td>
+            <td id="carrozza-value">prova</td>
+            <td id="codice-cp-value">prova</td>
+            <td id="totale-value">prova</td>
+          </tr>
+        </table>
+
+
+      </div>
+
     </div>
+
+
+
+
 
   </main>
     <script src="js/script.js" charset="utf-8"></script>

@@ -3,6 +3,7 @@
 // il prezzo del biglietto è definito in base ai km (0.21 € al km);
 // va applicato uno sconto del 20% per i minorenni;
 // va applicato uno sconto del 40% per gli over 65.
+var biglietto = document.getElementById("genera-biglietto");
 
 var buttonGenera = document.getElementById('genera');
 buttonGenera.addEventListener("click",
@@ -19,28 +20,29 @@ function() {
   // calcolare prezzo totale del viaggio
   var prezzoBiglietto = numeroKM * 0.21;
   // calcolare prezzo minorenni
-  var under18 = prezzoBiglietto - (prezzoBiglietto * 0.2);
+  var minorenne = prezzoBiglietto - (prezzoBiglietto * 0.2);
   // calcolare prezzo over65
   var over65 = prezzoBiglietto - (prezzoBiglietto * 0.4);
+
   var totale = "";
 
-  if (eta == "Minorenne") {
-  totale = under18.toFixed(2);
-  document.getElementById("sconto").innerHTML = "Sconto under18 -20%";
-  } else if (eta == "Over 65") {
+  if (etaPasseggero == "Minorenne") {
+  totale = minorenne.toFixed(2);
+  document.getElementById("sconto-value").innerHTML = "Sconto under18 -20%";
+} else if (etaPasseggero == "Over65") {
   totale = over65.toFixed(2);
-  document.getElementById("sconto").innerHTML = "Sconto over65 -40%";
-} if (eta == "Maggiorenne"){
+  document.getElementById("sconto-value").innerHTML = "Sconto over65 -40%";
+} else {
     totale = prezzoBiglietto.toFixed(2);
-    document.getElementById("sconto").innerHTML = "Biglietto regular";
+    document.getElementById("sconto-value").innerHTML = "Biglietto regular";
   }
 
-  document.getElementById("totale-value").innerHTML = prezzoBiglietto + " €";
+  document.getElementById("totale-value").innerHTML = totale + " €";
 
   // stampiamo biglietto
   var nomeUtenteValue = document.getElementById("nome-value").innerHTML = nomeUtente;
 
-  var scontoValue = document.getElementById("sconto-value").innerHTML = totale;
+  // var scontoValue = document.getElementById("sconto-value").innerHTML = etaPasseggero;
 
   var nomeUtenteValore = document.getElementById("nome-value").innerHTML = nomeUtente;
   var carrozzaValue = Math.floor((Math.random() * 9 ) + 1);
@@ -48,6 +50,11 @@ function() {
   var codiceCp = Math.floor((Math.random() * 10000 ) + 90000);
   document.getElementById("codice-cp-value").innerHTML = codiceCp;
 
-}
+  // biglietto show
 
+  biglietto.classname = "show";
+
+  console.log(biglietto);
+
+}
 );

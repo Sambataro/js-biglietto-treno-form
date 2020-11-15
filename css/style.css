@@ -59,7 +59,6 @@ main {
  }
 
  .form-biglietto {
-   transition: 1;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -82,8 +81,7 @@ main {
     margin: 0 10px;
   }
 
- .genera-biglietto {
-   transition: 1;
+ #genera-biglietto {
    display: flex;
    flex-direction:column;
    align-self: center;
@@ -92,7 +90,16 @@ main {
    height: 150px;
   }
 
-  .genera-biglietto table {
+ .hidden {
+   opacity: 0;
+   transition: 0.4s;
+  }
+ .show {
+   opacity: 1;
+   transition: 0.4s;
+ }
+
+  #genera-biglietto table {
     height: 90px;
     text-align: center;
     border-top: 1px solid black;

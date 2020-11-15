@@ -47,12 +47,12 @@
       <div class="form-biglietto">
         <form class="form-item" action="index.html" method="post">
 
-          <input id="nome" type="text" name="nome" placeholder="Nome Passegero">
-          <input id="km" type="number" name="" value="" placeholder="Km da percorrere">
-          <select id="eta"  name="eta">
-            <option value="Minorenne">Minorenne</option>
-            <option value="Maggiorenne">Maggiorenne</option>
-            <option value="Over65">Over65</option>
+          <input id="nome" type="text" name="nome" placeholder="Nome Passegero" required>
+          <input id="km" type="number" name="" value="" placeholder="Km da percorrere" required>
+          <select id="eta"  name="eta" required>
+            <option>Minorenne</option>
+            <option>Maggiorenne</option>
+            <option>Over65</option>
           </select>
           <br>
           <button id="genera" type="button" name="button">Genera</button>
@@ -60,7 +60,7 @@
         </form>
       </div>
       <h2>il tuo biglietto</h2>
-      <div class="genera-biglietto">
+      <div id="genera-biglietto" class="hidden">
         <h3>dettaglio passeggeri</h3>
         <br>
         <table>

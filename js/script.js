@@ -4,9 +4,12 @@
 // va applicato uno sconto del 20% per i minorenni;
 // va applicato uno sconto del 40% per gli over 65.
 var biglietto = document.getElementById("genera-biglietto");
+var buttonAnnulla = document.getElementById("annulla");
+
 
 var buttonGenera = document.getElementById('genera');
 buttonGenera.addEventListener("click",
+
 
 function() {
 
@@ -42,7 +45,6 @@ function() {
   // stampiamo biglietto
   var nomeUtenteValue = document.getElementById("nome-value").innerHTML = nomeUtente;
 
-  // var scontoValue = document.getElementById("sconto-value").innerHTML = etaPasseggero;
 
   var nomeUtenteValore = document.getElementById("nome-value").innerHTML = nomeUtente;
   var carrozzaValue = Math.floor((Math.random() * 9 ) + 1);
@@ -52,9 +54,26 @@ function() {
 
   // biglietto show
 
-  biglietto.classname = "show";
+  biglietto.className = "show";
 
   console.log(biglietto);
 
+}
+);
+
+// Annulla
+buttonAnnulla.addEventListener("click",
+function() {
+
+  // pulizia  valori
+  biglietto.className = "hidden";
+  document.getElementById("nome").value = "";
+  document.getElementById("km").value = "";
+  document.getElementById("eta").value = "";
+  document.getElementById("nome-value").innerHTML = "";
+  document.getElementById("sconto-value").innerHTML = "";
+  document.getElementById("carrozza-value").innerHTML = "";
+  document.getElementById("codice-cp-value").innerHTML = "";
+  document.getElementById("totale-value").innerHTML = "";
 }
 );

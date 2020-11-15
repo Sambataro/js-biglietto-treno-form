@@ -92,7 +92,6 @@ main {
 
  .hidden {
    opacity: 0;
-   transition: 0.4s;
   }
  .show {
    opacity: 1;
